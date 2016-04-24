@@ -19,10 +19,12 @@ default['rstudio']['cran']['packages'] = []
 
 # RStudio Server
 default['rstudio']['server']['www_port'] = '8787'
-default['rstudio']['server']['www_address'] = '127.0.0.1'
+default['rstudio']['server']['www_address'] = '0.0.0.0'
 default['rstudio']['server']['ld_library_path'] = ''
 default['rstudio']['server']['r_binary_path'] = ''
 default['rstudio']['server']['user_group'] = ''
+default['rstudio']['server']['version'] = '0.99.896'
+default['rstudio']['server']['arch'] = node['kernel']['machine'] =~ /x86_64/ ? "amd64" : "i386"
 
 # RStudio Session
 default['rstudio']['session']['timeout'] = '30'
@@ -31,7 +33,7 @@ default['rstudio']['session']['cran_repo'] = 'http://cran.case.edu/'
 
 # Nginx
 default['rstudio']['nginx']['port'] = '80'
-default['rstudio']['nginx']['server_name'] = ''
+default['rstudio']['nginx']['server_name'] = 'www.example.com'
 default['rstudio']['nginx']['location'] = '/'
 default['rstudio']['nginx']['shiny_location'] = ''
 
